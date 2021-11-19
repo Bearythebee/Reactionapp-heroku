@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<hr>
+<div style="text-align: center">
+    <h1>User info</h1>
+    <hr>
+    {% for po in potentialss %}
+    <hr>
+    <h3>Name: <span>{{ po.name1 }}</span></h3>
+    <h3>Email: <span>{{ po.mail1 }}</span></h3>
+    <a href='/deletes/{{po.id}}'>Delete</a>
+</div>
+<hr>
+{% endfor %}
+
+{% endblock %}

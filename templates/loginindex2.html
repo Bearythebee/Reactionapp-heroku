@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<hr>
+<div style="text-align: center">
+    <h1>Result</h1>
+    <hr>
+
+    {% for mailss in mails %}
+    <hr>
+    <h3>Name: <span>{{ mailss.name }}</span></h3>
+    <h3>Email: <span>{{ mailss.mail }}</span></h3>
+    <h3>Result: <span>{{ mailss.clear }}</span></h3>
+    <a href='/delete/{{mailss.id}}'>Delete</a>
+</div>
+<hr>
+{% endfor %}
+
+{% endblock %}

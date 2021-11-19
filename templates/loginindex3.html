@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<hr>
+<form method='POST' style="text-align: right">
+    <div style ='padding-right: 700px'>
+        User: <input type='text' name='username' id='username' required>
+        <br>
+        Password: <input type='text' name='password' id='password' required>
+        <br>
+        <input type='submit' value='Proceed' style="color:black">
+    </div>
+    <hr>
+   {% if error %}
+   <p class='error'><strong>Error: </strong>{{ error }}</p>
+   {% endif %}
+</form>
+<script src="{{url_for('static', filename='loginmain1.js')}}"></script>
+{% endblock %}
