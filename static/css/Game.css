@@ -1,0 +1,138 @@
+*{
+    box-sizing: border-box;
+    margin: 3px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#scale{
+    width: 150px;
+    height: 150px;
+}
+
+body {
+    margin: 0;
+   /* padding: 2rem;*/
+    height: 100vh;
+    background-color: #000;
+    color:white;
+    text-align: center;
+}
+h1,h3,p{
+    padding: 0 .5rem;
+}
+#shape {
+    width:200px;
+    height:200px;
+    background-color: red;
+    display: none;
+    position: relative;
+    border: 5px solid black;
+
+}
+.button1 {
+	font-size: 40px;
+	color:black;
+	border-Radius : 12px;
+    background-color: aquamarine;
+    font-family: "Times New Roman";
+}
+
+.final {
+    display: flex;
+    background-color: #123;
+    height: 30px;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.flex-container {
+  display: flex;
+  background-color: rgb(197, 194, 36);
+  height: 300px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.size{
+    font-size: 90px;
+}
+/*---------------------------------------------------------------------------*/
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 330px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content */
+  .modal-content {
+    background-color: #2602f0;
+    margin: auto;
+    padding: 30px;
+    padding-left: 300px;
+    padding-right:300px;
+    /*padding-left: 500px;*/
+    border: 1px solid #888;
+    width: 80%;
+    color:white;
+  }
+
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+#section2 {
+  height: 300px;
+  background-color: black;
+}
+
+textarea {
+    color: black;
+}
+
+.container{
+  padding: 0px 0px 0px 0px;
+  margin: 0 auto;
+
+}
+
+#video-div{
+  padding: 100px 0px 100px 110px;
+  margin: 0 auto;
+
+}
+
+#timing-div{
+  padding: 100px 0px 50px 110px;
+  margin: 0 auto;
+
+}
+
+#submit-div{
+  padding: 30px 0px 0px 0px;
+  margin: 0 auto;
+
+}

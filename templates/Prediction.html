@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid" id="header-ct">
+	<span>
+		<a href="https://draftwix.com">
+			<img id="scale" src="https://draftwix.com/assets/img/logo.png" srcset="https://draftwix.com/assets/img/logo.png" alt="Necromancers">
+		</a>
+    </span>
+
+    <div class="box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5" style="text-align:left;">
+                    <h1 style="color:yellow; padding-bottom:10px" >
+                        <u>Uploading of Video</u>
+                    </h1>
+                    <h5>Please upload a video of a player playing Mobile Legends: Bang Bang.</h5>
+                    <h5>Make sure that the shoulders, hands are visible and the player is front-facing the camera.</h5>
+                    <br>
+                    <hr>
+                    <br>
+                    <h1 style="color:yellow ; padding-bottom:10px">
+                        <u>Uploading of Timings</u>
+                    </h1>
+                    <h5> Currently, timings of fights have to be manually determined by user.</h5>
+                    <h5>Each fight generally should last around 3 - 7 seconds. Try to keep each fight/sub-video within 10 seconds to ease computational time.</h5>
+                </div>
+                <div class="col-lg-6" style="text-align:left;">
+                    <form id="myform" action="/prediction-upload video" onsubmit="popFunction()" method="POST" enctype = "multipart/form-data">
+                        <div id="video-div" class="row">
+                            <label class="custom-file-upload">
+                                <input type="file" id="videofile" name="videofile">
+                            </label>
+                        </div>
+                        <div id="timing-div" class="row">
+                            <h4>Timings : </h4>
+                            <textarea id="timings" name="timings" rows="1" cols="75"></textarea>
+                            <h6>Please enter with the correct format : "minutes:seconds-minutes:seconds;"</h6>
+                            <h6>e.g:  0:13-0:15;1:13-1:22</h6>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div id="submit-div" class="row" >
+                <button class="btn btn-outline-primary" type="submit" style="color:black; height:35px; width:150px" form="myform">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

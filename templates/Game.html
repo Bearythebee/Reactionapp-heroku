@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="https://draftwix.com"><img id="scale" src="https://draftwix.com/assets/img/logo.png" srcset="https://draftwix.com/assets/img/logo.png" alt="Necromancers"></a>
+<h1 style ="font-size: 30px; color:rgb(238, 255, 0);">Qualifying Test</h1>
+	<hr>
+<h2 style="color:rgb(238, 255, 0);"><b>Find out if you have the reaction of an average Esports Player.</b></h2>
+
+<h3 style="background-color: blue"> Click as soon as you see the <span style="font-size: 27px; color:rgb(255, 251, 0);">SHAPE. </span>
+	<span>Test</span><span style="font-size: 27px; color:red;" > STOPS</span><span> after 10 clicks.</span>
+</h3>
+
+<b>Best individual Time : </b><span id="best-time"></span>
+<b>Average Time : </b><span id="average-time"></span>
+<b>Clicks : </b><span id="score"></span>
+
+<div id="final">
+	<b>Status :<span id="result" style="font-size:20px ;"></span></b>
+</div>
+
+<hr>
+<div class="main" id="section2">
+	<div id="bounding-ct" class="flex-container">
+		<div id="shape">
+		</div>
+	</div>
+	<hr>
+	<button id="myBtn" class="button1">START TEST</button>
+
+	<div id="myModal" class="modal">
+	<!-- Modal content -->
+		<div class="modal-content">
+			<h4 class="close"></h4>
+			<h2 style="color:rgb(247, 247, 247); text-align: center"><b>Well Done! Submit your score.</b></h2>
+			<form action ='/' method='POST'>
+  				<div class="form-group">
+    				<input type="text" class="form-control" name='name' id='name' placeholder="Enter name" required>
+  				</div>
+				<div class="form-group">
+    				<input type="email" class="form-control" name='mail' id='mail' aria-describedby="emailHelp" placeholder="Enter email" required>
+    				<small id="emailHelp" class="form-text text-muted" style="color:white">We'll never share your email with anyone else.</small>
+  				</div>
+  				<input type='hidden' name='clear' id='clear' value='empty'>
+				<br>
+				<input type='submit' value='Submit' style="text-align:center; color:black">
+				<!--
+				<form action ='/' method='POST'>
+					<b>Name: </b><input type='text' name='name' id='name' required>
+					<input type='hidden' name='clear' id='clear' value='empty'>
+					<br>
+					<b>Email : </b><input type='text' name='mail' id='mail' required >
+					<br>
+					<input type='submit' value='Proceed' style="text-align:center; color:black">
+				-->
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
