@@ -1,5 +1,6 @@
 from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
 import os
+from celworker import celery
 
 def convert_timestring_to_seconds(tup):
     start, end = tup[0], tup[1]
@@ -9,6 +10,7 @@ def convert_timestring_to_seconds(tup):
     end_time = 60 * (int(end_min)) + int(end_sec)
     return start_time, end_time
 
+@celery.task()
 def trim_video(video_, timings):
     os.mkdir('tmp/')
     # write bytes to video

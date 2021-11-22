@@ -4,7 +4,9 @@ from Mediapipe_holistic import  framestocoord
 import numpy as np
 import torch
 from torch import nn
+from celworker import celery
 
+@celery.task()
 def converttoimages():
 
     main_arr = []
