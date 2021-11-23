@@ -8,9 +8,37 @@
 			<img id="scale" src="https://draftwix.com/assets/img/logo.png" srcset="https://draftwix.com/assets/img/logo.png" alt="Necromancers">
 		</a>
     </span>
+    <hr>
+    <button id="top"><a href="/prediction#session" style="color:black">Return to upload</a></button>
+    <div class="row">
+        <div class="col-lg-5" style="text-align:left;">
+            <h1 style="color:yellow; padding-bottom:10px">
+                <u>How to participate.</u>
+            </h1>
+        </div>
+        <div class="col-lg-5" style="text-align:left;">
+            <img src="static/instruction.gif" height="300" width="500"/>
+            <br>
+            <br>
+        </div>
+    </div>
 
+    <hr>
+
+    <div class="row">
+        <div class="col-lg-5" style="text-align:left;">
+            <h1 style="color:yellow; padding-bottom:10px">
+                <u>Example of video to be uploaded.</u>
+            </h1>
+        </div>
+        <div class="col-lg-5" style="text-align:left;">
+            <img src="static/whatvideo.gif" height="300" width="500"/>
+        </div>
+    </div>
+    <hr>
     <div class="box">
-        <div class="container">
+        <button><a href="/prediction#top" style="color:black">how to upload</a></button>
+        <div class="container" id="session">
             <div class="row">
                 <div class="col-lg-5" style="text-align:left;">
                     <h1 style="color:yellow; padding-bottom:10px" >
@@ -24,6 +52,8 @@
                     <h1 style="color:yellow ; padding-bottom:10px">
                         <u>Uploading of Timings</u>
                     </h1>
+                    <br>
+                    <br>
                     <h5> Currently, timings of fights have to be manually determined by user.</h5>
                     <h5>Each fight generally should last around 3 - 7 seconds. Try to keep each fight/sub-video within 10 seconds to ease computational time.</h5>
                 </div>
@@ -31,14 +61,17 @@
                     <form id="myform" action="/prediction-upload video" onsubmit="popFunction()" method="POST" enctype = "multipart/form-data">
                         <div id="video-div" class="row">
                             <label class="custom-file-upload">
-                                <input type="file" id="videofile" name="videofile">
+                                <input type="file" id="videofile" name="videofile" required>
                             </label>
                         </div>
                         <div id="timing-div" class="row">
                             <h4>Timings : </h4>
-                            <textarea id="timings" name="timings" rows="1" cols="75"></textarea>
-                            <h6>Please enter with the correct format : "minutes:seconds-minutes:seconds;"</h6>
-                            <h6>e.g:  0:13-0:15;1:13-1:22</h6>
+                            <textarea id="timings" name="timings" rows="1" cols="75"  placeholder="e.g:  0:13-0:15;1:13-1:22" required></textarea>
+                            <h6>Please extract and record the sets of fighting scene timings here</h6>
+                            <h6>Format : T1minutes:seconds-T1minutes:seconds;T2minutes:seconds-T2minutes:seconds</h6>
+                            <h6>: between minutes and seconds</h6>
+                            <h6>- To indicate from which time to which time</h6>
+                            <h6>; After each fight timing</h6>
                         </div>
                     </form>
                 </div>
