@@ -4,23 +4,13 @@
 <hr>
 <h1>Result</h1>
 <hr>
-<div class="col-lg-5" style="text-align:left;">
-    {% for mailss in mails %}
-        <h3>Name: <span>{{ mailss.name }}</span></h3>
-        <h3>Email: <span>{{ mailss.mail }}</span></h3>
-        <h3>Result: <span>{{ mailss.clear }}</span></h3>
-        <a href='/delete/{{mailss.id}}'>Delete</a>
-        <hr>
-    {% endfor %}
-</div>
-
-<div class="col-lg-6" style="text-align:left;">
+<div>
     {% for finalss in finals %}
-        <br>
-        <br>
-        <h1>Video: <span>{{ finalss.video }}</span></h1>
-        <br>
-        <br>
+        <h3>Name: <span>{{ finalss.name }}</span></h3>
+        <h3>Email: <span>{{ finalss.mail }}</span></h3>
+        <h3>Result: <span>{{ finalss.clear }}</span></h3>
+        <h3>Video: <span>{{ finalss.video }}</span></h3>
+        <a href='/delete/{{finalss.id}}'>Delete</a>
         <br>
         <hr>
     {% endfor %}

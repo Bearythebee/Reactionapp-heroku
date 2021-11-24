@@ -3,7 +3,7 @@
 {% block content %}
 <hr>
 <form method='POST' style="text-align: right">
-    <div style ='color:black; padding-right: 700px'>
+    <div style ='color:black; padding-right: 650px'>
         <b style="color:white">User: </b><input type='text' name='username' id='username' required>
         <br>
         <b style="color:white">Password: </b><input type='text' name='password' id='password' required>
@@ -12,7 +12,7 @@
     </div>
     <hr>
    {% if error %}
-   <p class='error'><strong>Error: </strong>{{ error }}</p>
+   <p class='error' style="text-align: center"><strong>Error: </strong>{{ error }}</p>
    {% endif %}
 </form>
 <script src="{{url_for('static', filename='loginmain1.js')}}"></script>

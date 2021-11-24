@@ -14,7 +14,6 @@ document.getElementById("myBtn").addEventListener("click", function() {
 
     var clear = document.getElementById("clear").value;
 
-
     function getRandomColor() {
         var letters = '0123456789ABCDEF'.split('');
         var color = "#";
@@ -28,7 +27,6 @@ document.getElementById("myBtn").addEventListener("click", function() {
         var top = Math.random()*200 -100;
         var left = Math.random()*2000;
         var width = (Math.random()*25)+100;
-
 
         if(left>max_width - width){
             left = max_width - width

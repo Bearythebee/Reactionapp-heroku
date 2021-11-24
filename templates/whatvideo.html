@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid" id="header-ct">
+	<span>
+		<a href="https://draftwix.com">
+			<img id="scale" src="https://draftwix.com/assets/img/logo.png" srcset="https://draftwix.com/assets/img/logo.png" alt="Necromancers">
+		</a>
+    </span>
+    <hr>
+    <div id="whatvideotop">
+        <h1 style="color:black">.</h1>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-5" style="text-align:left;">
+            <h1 style="color:yellow; padding-bottom:10px">
+                <u>How upload video.</u>
+            </h1>
+            <h3>- Take a video of you playing Mobile Legends: Bang Bang.</h3>
+            <h3>- Upload it to our website.</h3>
+            <h3>- Get free tickets when you tell us your fight timing in the game.</h3>
+            <br>
+            <br>
+            <h4>More information of what video to upload press the button below.</h4>
+            <button id="top"><a href="/whatvideo#example" style="color:black">What to upload</a></button>
+        </div>
+        <div class="col-lg-5" style="text-align:right;">
+            <img src="static/instruction.gif" height="500" width="700"/>
+            <br>
+            <br>
+        </div>
+    </div>
+      <button><a href="/prediction#session" style="color:black">Return to upload</a></button>
+    <div id="blank">
+        </div>
+
+    <div class="row" id="example">
+        <div class="col-lg-5" style="text-align:left;">
+            <h1 style="color:yellow; padding-bottom:10px">
+                <u>Example of video to be uploaded.</u>
+            </h1>
+            <br>
+            <button><a href="/prediction#session" style="color:black">Return to upload</a></button>
+        </div>
+        <div class="col-lg-5" style="text-align:left;">
+            <img src="static/whatvideo.gif" height="300" width="500"/>
+        </div>
+    </div>
+    <div id="blank2">
+        </div>
+</div>
+{% endblock %}
