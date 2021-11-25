@@ -24,7 +24,7 @@ def admin_log():
     return render_template("admin-log.html", error=error)
 
 
-@mainbp.route("/", methods=['GET', 'Post'])
+@mainbp.route("/game", methods=['GET', 'Post'])
 def game():
     if request.method == 'POST':
         db.session.query(mail).delete()
@@ -59,6 +59,10 @@ def show_user():
 def prediction():
 
     return render_template("Prediction.html")
+
+@mainbp.route('/')
+def welcome():
+    return render_template("/Welcome.html")
 
 @mainbp.route('/whatvideo')
 def whatvideo():

@@ -15,7 +15,7 @@
     <br>
     <br>
     <div class="row">
-        <div class="col-lg-5" style="text-align:left;">
+        <div class="col-lg-6" style="text-align:left;">
             <h1 style="color:yellow; padding-bottom:10px">
                 <u>How upload video.</u>
             </h1>
@@ -25,7 +25,9 @@
             <br>
             <br>
             <h4>More information of what video to upload press the button below.</h4>
-            <button id="top"><a href="/whatvideo#example" style="color:black">What to upload</a></button>
+            <form method="get" action="/whatvideo#example">
+                <button type="submit" style="color:black"> What to upload</button>
+            </form>
         </div>
         <div class="col-lg-5" style="text-align:right;">
             <img src="static/instruction.gif" height="500" width="700"/>
@@ -33,20 +35,30 @@
             <br>
         </div>
     </div>
-      <button><a href="/prediction#session" style="color:black">Return to upload</a></button>
+    <form method="get" action="/prediction#session">
+            <button type="submit" style="color:black">Return to upload</button>
+        </form>
     <div id="blank">
         </div>
 
     <div class="row" id="example">
-        <div class="col-lg-5" style="text-align:left;">
+        <div class="col-lg-6" style="text-align:left;">
             <h1 style="color:yellow; padding-bottom:10px">
                 <u>Example of video to be uploaded.</u>
             </h1>
             <br>
-            <button><a href="/prediction#session" style="color:black">Return to upload</a></button>
+            <form method="get" action="/prediction#session" >
+                <h3>click here to return to uploading of video</h3>
+                <button type="submit" style="color:black; display: inline;">Return to upload</button>
+            </form>
+
         </div>
-        <div class="col-lg-5" style="text-align:left;">
+        <div class="col-lg-5" style="text-align:right;">
             <img src="static/whatvideo.gif" height="300" width="500"/>
+
+            <form method="get" action="/whatvideo#whatvideotop" >
+                <button type="submit" style="color:black; display: inline;">How to upload</button>
+            </form>
         </div>
     </div>
     <div id="blank2">
