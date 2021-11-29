@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, Flask
 from dbworker import db
 from datetime import datetime
 from VideoTrimmer import trim_video
@@ -7,8 +7,13 @@ from Converttoinput import converttoimages
 import os
 from databases import mail, access, final
 from Model import predict_result
+from flask_mail import Message
+from Send_mail import Sendmail
 
 mainbp = Blueprint('main', __name__)
+
+
+
 
 @mainbp.route("/login", methods=['GET', 'POST'])
 def admin_log():
@@ -60,20 +65,23 @@ def prediction():
 
     return render_template("Prediction.html")
 
+
 @mainbp.route('/')
 def welcome():
+
     return render_template("/Welcome.html")
+
 
 @mainbp.route('/whatvideo')
 def whatvideo():
 
     return render_template("whatvideo.html")
 
+
 @mainbp.route('/instruction')
 def instruction():
 
     return render_template("instruction.html")
-
 
 
 # Route for prediction functionailty
@@ -122,10 +130,18 @@ def prediction_uploadvideo():
     remove = mail.query.get_or_404(1)
     db.session.delete(remove)
     db.session.commit()
-
 ###################################################################################3
-
     end = datetime.now()
     print(end - start)
 
     return render_template("Game.html")
+
+
+@mainbp.route("/mail")
+def send_mail():
+    usermail = 'bvdznwtjevxqnz@leadwizzer.com'
+    msg = Message('Result From Draftwix', recipients=[usermail])
+    msg.html = '<b>This is a testing mail.</b> ' \
+               '<p>hello new para</p>'
+    Sendmail.send(msg)
+    return 'message has been send'
