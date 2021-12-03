@@ -25,3 +25,4 @@ class final(db.Model):
     mail = db.Column(db.String(100))
     clear = db.Column(db.String(100))
     video = db.Column(db.String(100), nullable=False)
+

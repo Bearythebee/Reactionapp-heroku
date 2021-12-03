@@ -9,9 +9,9 @@ document.getElementById("myBtn").addEventListener("click", function() {
     var average = 0;
     var max_width = document.getElementById('bounding-ct').getBoundingClientRect().width
     var ending = 0;
-    var tries =1;
+    var tries =10;
     var average1 =0;
-
+    var right =0;
     var clear = document.getElementById("clear").value;
 
     function getRandomColor() {
@@ -23,7 +23,7 @@ document.getElementById("myBtn").addEventListener("click", function() {
         return color;
     }
 
-    function doAppear() {
+      function doAppear() {
         var top = Math.random()*200 -100;
         var left = Math.random()*2000;
         var width = (Math.random()*25)+100;
@@ -31,6 +31,22 @@ document.getElementById("myBtn").addEventListener("click", function() {
         if(left>max_width - width){
             left = max_width - width
         }
+
+        if (left > 600 && right > 600){
+            left = left - 800
+
+            if (left < 0){
+                left = 0
+            }
+        }
+        else if (left < 600 && right < 600){
+            left = left + 400
+
+            if(left>max_width - width){
+                left = max_width - width
+            }
+        }
+        right = left
 
         // Get circles
         if(Math.random()>0.5) {

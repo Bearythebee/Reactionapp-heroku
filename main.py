@@ -13,8 +13,6 @@ from Send_mail import Sendmail
 mainbp = Blueprint('main', __name__)
 
 
-
-
 @mainbp.route("/login", methods=['GET', 'POST'])
 def admin_log():
     x = access.query.all()[0].user
@@ -32,6 +30,7 @@ def admin_log():
 @mainbp.route("/game", methods=['GET', 'Post'])
 def game():
     if request.method == 'POST':
+
         db.session.query(mail).delete()
 
         post_name = request.form['name']
@@ -122,26 +121,35 @@ def prediction_uploadvideo():
     name = mail.query.all()[0].name
     email = mail.query.all()[0].mail
     clear = mail.query.all()[0].clear
-    potential = ('{}'.format(sum(result) / len(result)))
+    potential = (sum(result) / len(result))
 
     new_post = final(name=name, mail=email, clear=clear, video=potential)
     db.session.add(new_post)
 
-    remove = mail.query.get_or_404(1)
-    db.session.delete(remove)
+
     db.session.commit()
+    usermail = mail.query.all()[0].mail
+
+    if potential == 1:
+        msg = Message('Result From Draftwix', recipients=[usermail])
+        msg.html = '<b>This is a testing mail. PASS.</b> ' \
+                    '<p>hello new para</p>'
+    else:
+        msg = Message('Result From Draftwix', recipients=[usermail])
+        msg.html = '<b>This is a testing mail. Try again.</b> ' \
+                   '<p>hello new para</p>'
+
+    Sendmail.send(msg)
+
+
 ###################################################################################3
     end = datetime.now()
     print(end - start)
 
-    return render_template("Game.html")
+    return redirect('/mail')
 
 
 @mainbp.route("/mail")
 def send_mail():
-    usermail = 'bvdznwtjevxqnz@leadwizzer.com'
-    msg = Message('Result From Draftwix', recipients=[usermail])
-    msg.html = '<b>This is a testing mail.</b> ' \
-               '<p>hello new para</p>'
-    Sendmail.send(msg)
-    return 'message has been send'
+
+    return render_template("Sendingmail.html")

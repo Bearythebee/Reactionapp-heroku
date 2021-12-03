@@ -11,6 +11,7 @@ def create_app():
     app.config['SQLALCHEMY_BINDS'] = {'TWO': 'sqlite:///two.db',
                                       'THREE': 'sqlite:///final.db'}
 
+
     app.config['DEBUG'] = True
     app.config['TESTING'] = False
     app.config['MAIL_SERVER'] = 'smtp-mail.outlook.com'
@@ -18,9 +19,9 @@ def create_app():
     app.config['MAIL_USE_TLS'] = True
     app.config['MAIL_USE_SSL'] = False
     #app.config['MAIL_DEBUG'] = True
-    app.config['MAIL_USERNAME'] = 'FortestingABC11@hotmail.com'
-    app.config['MAIL_PASSWORD'] = 'word@Pass123'
-    app.config['MAIL_DEFAULT_SENDER'] = 'FortestingABC11@hotmail.com'
+    app.config['MAIL_USERNAME'] = 'fortesting2222@hotmail.com'
+    app.config['MAIL_PASSWORD'] = 'Fortestingacc123'
+    app.config['MAIL_DEFAULT_SENDER'] = 'fortesting2222@hotmail.com'
     app.config['MAIL_MAX_EMAILS'] = None
     #app.config['MAIL_SUPPRESS_SEND'] = False
     app.config['MAIL_ASCII_ATTACHMENTS'] = False
