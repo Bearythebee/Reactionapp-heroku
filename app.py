@@ -5,6 +5,7 @@ from Send_mail import Sendmail
 
 
 def create_app():
+
     app = Flask(__name__)
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
@@ -29,6 +30,7 @@ def create_app():
 
     Sendmail.init_app(app)
     db.init_app(app)
+
     app.register_blueprint(main_blueprint)
     return app
 

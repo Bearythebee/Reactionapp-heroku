@@ -10,9 +10,16 @@ from Model import predict_result
 from flask_mail import Message
 from Send_mail import Sendmail
 
+
 mainbp = Blueprint('main', __name__)
 
 
+@mainbp.route('/display/<filename>')
+def display_video(filename):
+    # print('display_video filename: ' + filename)
+    return redirect(url_for('static', filename='uploads/' + filename), code=301)
+
+###############
 @mainbp.route("/login", methods=['GET', 'POST'])
 def admin_log():
     x = access.query.all()[0].user
